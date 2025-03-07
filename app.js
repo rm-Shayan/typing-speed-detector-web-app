@@ -99,7 +99,7 @@ function highlightWords() {
 
 function updateScore() {
     let score = Math.round((correctWords / totalWords) * 100);
-    scoreText.innerText = `${score}%`;
+    scoreText.innerText = `${score}`;
 
     let offset = 282.74 - (score / 100) * 282.74;
     scoreCircle.style.strokeDashoffset = offset;
@@ -143,7 +143,7 @@ function resetGame() {
     timeLeft = 60;
     started = false;
     document.getElementById("timer").innerText = timeLeft;
-    progressBar.style.width = "100"; 
+    progressBar.style.width = "100%"; 
     inputField.value = "";
     inputField.style.background = "white";
     inputField.style.color = "black";
