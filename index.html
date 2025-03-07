@@ -6,34 +6,50 @@
     <title>Typing Speed Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+<body class="flex flex-col items-center justify-center h-screen bg-gray-100">
 
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full">
-        <h1 class="text-2xl font-bold text-center mb-4">Typing Speed Test</h1>
-        
-        <!-- Random Paragraph Display -->
-        <p id="paragraph" class="text-gray-700 p-4 border rounded bg-gray-200"></p>
+    <h1 class="text-2xl font-bold mb-4">Typing Speed Test</h1>
+    
+    <div class="bg-white p-6 rounded-lg shadow-md w-3/4 max-w-lg text-center">
+        <!-- Quote Display -->
+        <p id="paragraph" class="text-lg italic mb-4">Loading...</p>
 
-        <!-- Typing Input Box -->
-        <textarea id="typingInput" rows="4" 
-            class="w-full mt-4 p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Start typing here..."></textarea>
-
-        <!-- Stats Section -->
-        <div class="flex justify-between items-center mt-4 text-gray-600">
-            <p>⏳ Time: <span id="timer">60</span>s</p>
-            <p>📝 Words: <span id="wordCount">0</span></p>
+        <!-- Timer & Progress Bar -->
+        <div class="w-full bg-gray-300 h-2 rounded">
+            <div id="progressBar" class="h-2 bg-blue-500 rounded" style="width: 100%;"></div>
         </div>
 
-        <!-- Restart Button -->
-        <button onclick="restartTest()" 
-            class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">
-            Restart Test
-        </button>
+        <p class="mt-2">Time Left: <span id="timer" class="font-bold">60</span> seconds</p>
+        
+        <!-- Typing Input -->
+        <textarea id="typingInput" 
+                  class="w-full p-2 mt-4 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  rows="4" 
+                  placeholder="Start typing here..."></textarea>
+
+        <button onclick="resetGame()" 
+                class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Reset</button>
+        
+        <p class="mt-2 text-gray-600">Last word typed: <span id="wordCount" class="font-bold">-</span></p>
+    </div>
+
+    <!-- Score Progress Circle -->
+    <div class="relative mt-6 w-40 h-40">
+        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" stroke="gray" stroke-width="8" fill="transparent"/>
+            <circle id="scoreCircle" cx="50" cy="50" r="45" stroke="blue" stroke-width="8" fill="transparent"
+                stroke-dasharray="282.74" 
+                stroke-dashoffset="282.74"
+                stroke-linecap="round"
+            />
+        </svg>
+        <p class="absolute inset-0 flex items-center justify-center text-xl font-bold">
+            <span id="score">0</span>%
+        </p>
     </div>
 
     <script src="app.js">
-      
+     
     </script>
 
 </body>
