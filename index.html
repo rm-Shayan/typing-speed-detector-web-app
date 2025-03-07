@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full">
+        <h1 class="text-2xl font-bold text-center mb-4">Typing Speed Test</h1>
+        
+        <!-- Random Paragraph Display -->
+        <p id="paragraph" class="text-gray-700 p-4 border rounded bg-gray-200"></p>
+
+        <!-- Typing Input Box -->
+        <textarea id="typingInput" rows="4" 
+            class="w-full mt-4 p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Start typing here..."></textarea>
+
+        <!-- Stats Section -->
+        <div class="flex justify-between items-center mt-4 text-gray-600">
+            <p>⏳ Time: <span id="timer">60</span>s</p>
+            <p>📝 Words: <span id="wordCount">0</span></p>
+        </div>
+
+        <!-- Restart Button -->
+        <button onclick="restartTest()" 
+            class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">
+            Restart Test
+        </button>
+    </div>
+
+    <script src="app.js">
+      
+    </script>
+
+</body>
+</html>
